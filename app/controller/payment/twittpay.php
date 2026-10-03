@@ -17,7 +17,7 @@ if (empty($transaction_id)) {
 }
 
 $apiKey = trim($methodExtras['api_key']);
-$apiBaseUrl = rtrim((trim((string) $methodExtras['api_url']) !== '' ? $methodExtras['api_url'] : 'https://checkout.twittpay.com'), '/');
+$apiBaseUrl = 'https://checkout.twittpay.com';
 $scheme = 'https';
 $host = parse_url($apiBaseUrl, PHP_URL_HOST);
 $apiUrl = $scheme . "://" . $host . "/api/payment/verify";
