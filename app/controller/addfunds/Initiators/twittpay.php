@@ -5,7 +5,7 @@ if (!defined('ADDFUNDS')) {
 }
 
 $apiKey = $methodExtras["api_key"];
-$apiUrl = rtrim($methodExtras["api_url"], '/') . '/';
+$apiUrl = rtrim((trim((string) $methodExtras["api_url"]) !== '' ? $methodExtras["api_url"] : 'https://checkout.twittpay.com'), '/') . '/';
 $exchangeRate = $methodExtras["exchange_rate"];
 $payeeName = $user["name"] ?: "User";
 $payeeEmail = $user["email"] ?: "test@test.com";
